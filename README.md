@@ -5,11 +5,11 @@ A customizable age verification component for SvelteKit and Astro projects. Buil
 ## Installation
 
 ```bash
-npm install agegate
+npm install @valink-solutions-ltd/agegate
 # or
-pnpm add agegate
+pnpm add @valink-solutions-ltd/agegate
 # or
-yarn add agegate
+yarn add @valink-solutions-ltd/agegate
 ```
 
 ## Usage
@@ -19,8 +19,8 @@ yarn add agegate
 ```svelte
 <!-- src/routes/+layout.svelte -->
 <script>
-	import { AgeGate } from 'agegate';
-	import 'agegate/styles.css';
+	import { AgeGate } from '@valink-solutions-ltd/agegate';
+	import '@valink-solutions-ltd/agegate/styles.css';
 
 	// Your layout code
 </script>
@@ -66,30 +66,24 @@ This component uses:
 
 ## Developing
 
-Once you've cloned the repository and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've cloned the repository and installed dependencies with `pnpm install`, start a development server:
 
 ```bash
-npm run dev
+pnpm dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm dev -- --open
 ```
 
 ## Building
 
-To build your library:
+To build the library:
 
 ```bash
-npm run package
+pnpm build
 ```
 
-To create a production version of your showcase app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
+You can preview the showcase app with `pnpm preview`.
 
 ## License
 

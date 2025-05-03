@@ -1,5 +1,5 @@
 {
-	"name": "agegate",
+	"name": "@valink-solutions-ltd/agegate",
 	"version": "0.0.1",
 	"description": "Age verification component for SvelteKit and Astro",
 	"scripts": {
