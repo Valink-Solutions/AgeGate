@@ -1,24 +1,72 @@
-# Svelte library
+# AgeGate
 
-Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
+A customizable age verification component for SvelteKit and Astro projects. Built with Svelte 5.
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+## Installation
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+npm install agegate
+# or
+pnpm add agegate
+# or
+yarn add agegate
 ```
+
+## Usage
+
+### 1. Import the component and styles in your layout file
+
+```svelte
+<!-- src/routes/+layout.svelte -->
+<script>
+	import { AgeGate } from 'agegate';
+	import 'agegate/styles.css';
+
+	// Your layout code
+</script>
+
+<!-- Add the AgeGate component at the top of your layout -->
+<AgeGate minimumAge={21} redirectUrl="https://www.example.com" cookieDuration={30} />
+
+<!-- Your layout content -->
+<slot />
+```
+
+### 2. Configuration options
+
+The AgeGate component accepts the following props:
+
+| Prop             | Type   | Default                  | Description                                                                     |
+| ---------------- | ------ | ------------------------ | ------------------------------------------------------------------------------- |
+| `minimumAge`     | number | 19                       | The minimum age required to access the site                                     |
+| `redirectUrl`    | string | 'https://www.google.com' | The URL to redirect to if age verification fails                                |
+| `cookieDuration` | number | 30                       | Number of days to remember the user's verification (if they choose to remember) |
+
+## Features
+
+- 🔒 Age verification with date picker
+- 🍪 Cookie-based remembering of verification
+- 🌓 Dark mode support
+- 📱 Responsive design
+- 🔧 Customizable properties
+- ⚡ Built with Svelte 5 runes
+- 🧩 Easy integration with SvelteKit and Astro projects
+
+## Requirements
+
+- Svelte 5.0.0 or higher
+- SvelteKit 2.0.0 or higher (for SvelteKit projects)
+
+## Dependencies
+
+This component uses:
+
+- [bits-ui](https://www.bits-ui.com/) for the date picker
+- [@internationalized/date](https://www.npmjs.com/package/@internationalized/date) for date manipulation
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've cloned the repository and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
 npm run dev
@@ -26,8 +74,6 @@ npm run dev
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
 ```
-
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
 
 ## Building
 
@@ -45,14 +91,6 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## License
 
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
+MIT

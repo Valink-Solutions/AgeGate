@@ -1,6 +1,7 @@
 {
 	"name": "agegate",
 	"version": "0.0.1",
+	"description": "Age verification component for SvelteKit and Astro",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run prepack",
@@ -26,8 +27,10 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
-		}
+			"svelte": "./dist/index.js",
+			"default": "./dist/index.js"
+		},
+		"./styles.css": "./dist/styles.css"
 	},
 	"peerDependencies": {
 		"svelte": "^5.0.0"
@@ -51,11 +54,20 @@
 		"vite": "^6.2.6"
 	},
 	"keywords": [
-		"svelte"
+		"svelte",
+		"astro",
+		"sveltekit",
+		"age gate",
+		"age verification"
 	],
+	"license": "MIT",
 	"pnpm": {
 		"onlyBuiltDependencies": [
 			"esbuild"
 		]
+	},
+	"dependencies": {
+		"@internationalized/date": "^3.8.0",
+		"bits-ui": "^1.4.3"
 	}
 }
